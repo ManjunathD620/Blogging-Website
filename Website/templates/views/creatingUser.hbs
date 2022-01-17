@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/account.css">
+    <title>SignUp</title>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <h3>Welcome</h3><br>
+                <h5 style="font-variant: small-caps;">Take A New Journey With Us !</h5>
+                <form action="/login" method="GET">
+                    <input type="submit" value="Login" /><br />
+                </form>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Create your account</h3>
+
+                        <form action="/account" method="POST">
+
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input required type="text" class="form-control" placeholder="First Name *"
+                                            name="fname" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input required type="email" class="form-control" placeholder="Email *"
+                                            name="email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input required type="text" class="form-control" placeholder="Phone Number *"
+                                            maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits"
+                                            name="phone" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input required type="password" class="form-control" id="password"
+                                            placeholder="Password *" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                            name="password" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input required type="text" class="form-control" placeholder="Last Name *"
+                                            name="lname" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            <label class="radio inline">
+                                                <input type="radio" name="gender" value="male" checked>
+                                                <span> Male </span>
+                                            </label>
+                                            <label class="radio inline">
+                                                <input type="radio" name="gender" value="female">
+                                                <span>Female </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" min="18"
+                                            placeholder="Enter Your Age *" name="age" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="cpassword" class="form-control"
+                                            placeholder="Confirm Password *" name="cpassword" />
+                                        <span id="alert" class="text-danger"></span>
+                                    </div>
+                                    <input type="submit" class="btnRegister" id="button" />
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var v1 = document.getElementById("password");
+        var v2 = document.getElementById("cpassword");
+        var v3 = document.getElementById("alert");
+        var v4 = document.getElementById("button");
+
+        function validate()
+        {
+            if(v1.value != v2.value)
+            {
+                v3.textContent = "Passwords Don't Match"
+
+                setTimeout(()=>{
+                    v3.textContent = ""
+                },3000)
+                v4.disabled = true;
+            }
+            else{
+                v4.disabled = false;
+            }
+        }
+        
+        v1.onchange = validate;
+        v2.onkeyup = validate;
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

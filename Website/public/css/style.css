@@ -1,0 +1,12 @@
+#logo{
+    font-family: 'Orelega One', cursive;
+    color: rgba(221, 20, 20, 0.734) !important;
+    font-size: 2rem;
+}
+
+div.first-style{
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Orelega One', cursive;
+}
+

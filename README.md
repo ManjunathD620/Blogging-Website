@@ -2,7 +2,7 @@
 In this project, I have worked on Full Stack Web Development using Node.js as Backend server and HTML,CSS and Javascript as Frontend platform to perform CRUD Operations on Blog using MongoDB.
 
 
-# Major features of the Web Application:
+# Major features of the Website:
 * Implemented user as well as admin login / Sign Up 
 * Admin can write or publish the article by using editor which is also implemented using Node js etc.
 

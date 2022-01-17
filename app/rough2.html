@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/useless.css">
+    <script src="js/useless.js"></script>
+    <title>EDITOR</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('mySidenav')">&times;</a>
+        <div class = "blocks">
+        <form action="/uploads" method="POST" enctype="multipart/form-data" id="form">
+            <label id="labels">Image</label>
+            <input class="text-fields" type="file" accept="image/png, image/jpeg" name="uploaded_file"><br><br>
+            <label id = "labels">caption for image</label>
+            <input type="text" class="text-fields" name="file_title" id="file_title">
+            <input type="submit" class="buttons-in-sidebar" value="upload">
+            <button class="buttons-in-sidebar" onclick="insert_image()">Insert</button> 
+        </form>
+        </div>
+        <div class = "blocks">
+        <label id="labels">Link</label>
+        <input type="url" class="text-fields" id="inserted-url">&nbsp;<br><br>
+        <label id="labels">text to display</label>
+        <input type="text" class="text-fields" id="text-to-display">
+        <button class="buttons-in-sidebar"  onclick="insert_link()">Insert</button>
+        </div>
+        <div class = "blocks">
+        <label id="labels">Insert table</label>
+        <input type="number" class="text-fields" max=30 min=1 id="rows" placeholder="rows">
+        <input type="number" class="text-fields" max=30 min=1 id="columns" placeholder="columns">
+        <button class="buttons-in-sidebar" onclick="insert_table()">Insert</button>
+        </div>
+        <div class = "blocks">
+        <label id="labels">Insert list</label>
+        <input type="number" class="text-fields" max=30 min=1 id="rows-list" placeholder="rows">
+        <button class="buttons-in-sidebar" onclick="insert_list()">Insert</button>
+        </div>
+    </div>
+
+    <div id="mySidenav2" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('mySidenav2')">&times;</a>
+        <div class = "blocks">
+        <input type="checkbox" class="checks" id="bold" name="bold" value="b">
+        <label id="labels" for="bold">Bold</label>
+        <input type="checkbox" class="checks" id="striked" name="striked" value="strike">
+        <label id="labels" for="striked">Striked</label>
+        <input type="checkbox" class="checks" id="italic" name="italic" value="i">
+        <label id="labels" for="italic">Italic</label>
+        <input type="checkbox" class="checks" id="Underlined" name="Underlined" value="u">
+        <label id="labels" for="Underlined">Underlined</label>
+    </div>
+    <div class = "blocks">
+        <label id="labels" for="text-size">Text-Size</label>
+        <input id="text-size" class="text-fields" type="number" maxlength="2" min="1" max="30">
+    </div>
+    <div class = "blocks">
+        <label id="labels" for="text-color">Text-Color</label>
+        <input type="color" name="text-color" id="text-color">
+    </div>
+    <div class = "blocks">
+        <input type="checkbox" id="inline">
+        <label id="labels" for="inline">Same line</label>
+    </div>
+    <div class = "blocks">
+        <label id="labels" for="fonts">Select Font Family</label>
+        <select class="text-fields" id="fonts">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Andale Mono"> Andale Mono</option>
+            <option value="Comic Sans">Comic Sans</option>
+            <option value="Impact">Impact</option>
+            <option value="Brush Script MT">Brush Script MT</option>
+            <option value=" Luminari"> Luminari</option>
+            <option value="Stencil Std">Stencil Std</option>
+        </select>
+    </div>
+    <div class = "blocks">
+        <button class="buttons-in-sidebar" onclick="font_maker()">Insert</button>
+    </div>
+    </div>
+
+    <div id="mySidenav4" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('mySidenav4')">&times;</a>
+        <div class = "blocks">
+        <button class="buttons-in-sidebar" onclick="get_innerHtml()">Validate</button>
+    </div>
+    <div class = "blocks">
+        <form action = "/" method="post" >
+            <textarea name="innerhtml" id="innerhtml" cols="30" rows="10"  style="display: none;"></textarea>
+            <label for="title" id="labels">Title of page</label>
+            <input type="text" class="text-fields" name="title" id="title">
+        </div>
+    <div class = "blocks">
+            <input type="submit" class="buttons-in-sidebar" value="submit">
+
+        </form>
+    </div>
+    </div>
+    
+    <div class="tab">
+        <button onclick="openNav('mySidenav')" class="tablinks">Insert</button><br>
+        <button onclick="openNav('mySidenav2')" class="tablinks">Text-Formatting</button><br>
+        <button onclick="openNav('mySidenav4')" class="tablinks">Submit</button><br>
+    </div>
+    
+    <div id="holder">
+        <div id="editor">
+            
+            <h1 contenteditable="true" id="header">Heading here</h1>
+            <div id="content-holder" contenteditable="true">
+            content here
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

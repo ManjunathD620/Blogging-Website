@@ -1,0 +1,27 @@
+body{
+    background-color:white;
+}
+
+#editor{
+    margin-left:10%;
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+#header{
+    margin-top:3%;
+    border-bottom: 4px solid black;
+}
+
+[id^="0."]{
+    margin-left:2%;
+}
+
+#content-holder{
+    margin-left:2%;
+}
+
+[id^="img"]{
+    margin-top: 3%;
+    margin-bottom: 0;
+}
